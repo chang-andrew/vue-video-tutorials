@@ -1,7 +1,7 @@
 <template lang='pug'>
   div.flex.justify-center
     div
-      h1.text-4xl Just a testing page
+      h1.text-4xl Modal Component w/ Transitions
       button.btn(@click="modalVisible = true") Open Modal
     Modal(:isVisible="modalVisible" @cancel="modalVisible = false" @confirm="modalVisible = false")
 </template>
