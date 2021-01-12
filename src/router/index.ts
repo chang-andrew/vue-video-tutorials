@@ -1,15 +1,20 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Chat from '../views/Chat.vue';
-import Test from '../views/Test.vue';
+import Home from '../views/Home.vue';
+import ModalTest from '../views/ModalTest.vue';
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Test',
-    component: Test,
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/modal',
+    name: 'Modal',
+    component: ModalTest
   }
 ];
 
