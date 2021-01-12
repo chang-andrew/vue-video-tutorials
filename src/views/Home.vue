@@ -1,6 +1,6 @@
 <template lang='pug'>
   div.full-screen-div
-    p This is a test page.
+    p.text-3xl This is the home page.
 </template>
 
 <script lang='ts'>
@@ -13,4 +13,11 @@
 </script>
 
 <style scoped>
+  .full-screen-div {
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    @apply h-screen;
+    @apply w-screen;
+  }
 </style>
