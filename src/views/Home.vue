@@ -11,13 +11,3 @@
   export default class Test extends Vue {
   }
 </script>
-
-<style scoped>
-  .full-screen-div {
-    @apply flex;
-    @apply justify-center;
-    @apply items-center;
-    @apply h-screen;
-    @apply w-screen;
-  }
-</style>
