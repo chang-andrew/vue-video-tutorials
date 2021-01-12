@@ -13,9 +13,11 @@ In general, I will be creating some Vue components or discussing various Vue fea
 
 *Part 1*: https://youtu.be/5kRClThy-y8
 
-*Part 2*: https://youtu.be/LTRvj9LUdgs
+*Part 2*: https://youtu.be/f3RHHGk6iHs
 
-*Part 3*: https://youtu.be/f3RHHGk6iHs
+### Vue Transitions ###
+
+https://youtu.be/LTRvj9LUdgs
 
 ### Events in Vue ###
 
