@@ -6,17 +6,23 @@
           // header
           div.p-5
             div.flex.justify-between.items-start
-              h3.text-2xl.font-semibold Modal Header
+              h3.text-2xl.font-semibold
+                slot(name='title')
               button.p-1.leading-none(@click="emitCancel")
                 div.text-xl.font-semibold.h-6.w-6
                   span x
           // body
           div.p-6
-            p This is a modal body content. Let's make this line a bit longer to see the width.
+            slot(name='body')
           // footer
-          div.p-6.flex.justify-end.items-center
-            button.btn-outline(@click="emitCancel") Cancel
-            button.btn.ml-2(@click="emitConfirm") Confirm
+          slot(name='footer')
+            div.p-6.flex.justify-end.items-center
+              button(@click="emitCancel")
+                slot(name='cancel-button')
+                  button.btn-outline Cancel
+              button.ml-2(@click="emitConfirm")
+                slot(name='confirm-button')
+                  button.btn Confirm
       div.opacity-25.fixed.inset-0.z-40.bg-black
 </template>
 
