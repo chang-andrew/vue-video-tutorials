@@ -1,0 +1,54 @@
+/* Buttons Start */
+.btn-base {
+    @apply font-bold;
+    @apply py-1;
+    @apply px-2;
+    @apply rounded;
+    @apply font-normal;
+}
+
+.btn {
+    @apply btn-base;
+    @apply bg-teal-400;
+    @apply text-white;
+}
+
+.btn:hover {
+    @apply bg-teal-700;
+}
+
+.btn-danger {
+    @apply btn-base;
+    @apply bg-red-500;
+    @apply text-white;
+}
+
+.btn-danger:hover {
+    @apply bg-red-700;
+}
+/* Buttons End */
+
+/* Outline Buttons Start */
+
+.btn-outline-base {
+    @apply btn-base;
+    @apply bg-transparent;
+    @apply border;
+}
+
+.btn-outline-base-hover {
+    @apply border-transparent;
+    @apply text-white;
+}
+
+.btn-outline {
+    @apply btn-outline-base;
+    @apply text-teal-700;
+    @apply border-teal-400;
+}
+
+.btn-outline:hover {
+    @apply btn-outline-base-hover;
+    @apply bg-teal-400;
+}
+/* Outline Buttons End */
