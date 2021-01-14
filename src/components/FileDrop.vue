@@ -1,8 +1,10 @@
 <template lang='pug'>
-  div.demo-box.w-64.h-64(ref="dragDiv"
-    @drop.prevent="dropHandler('dragDiv')"
-    @dragover.prevent="dragOverHandler('dragDiv')"
-    @dragleave.prevent="dragLeaveHandler('dragDiv')")
+  div
+    div.demo-box.w-64.h-64(ref="dragDiv"
+      @drop.prevent="dropHandler($event, 'dragDiv')"
+      @dragover.prevent="dragOverHandler('dragDiv')"
+      @dragleave.prevent="dragLeaveHandler('dragDiv')")
+    p(v-for="file in allFiles") {{ file.name }}
 </template>
 
 <script lang='ts'>
@@ -11,7 +13,14 @@
 
   @Component({})
   export default class EventsTest extends Vue {
-    dropHandler(refName: string) {
+    allFiles: any[] = [];
+
+    dropHandler(event: any, refName: string) {
+      const droppedFiles = event.dataTransfer.files;
+      droppedFiles.forEach((f: any) => {
+        this.allFiles.push(f);
+      });
+
       (this.$refs[refName] as HTMLElement).style.backgroundColor = 'red';
       setTimeout(() => {
         (this.$refs[refName] as HTMLElement).style.backgroundColor = 'white';
