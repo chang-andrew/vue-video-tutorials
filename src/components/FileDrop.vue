@@ -4,8 +4,8 @@
     div.filedrop-box(
       :class="{'filedrop-box-dragover': isDragover}"
       @drop.prevent="dropHandler($event)"
-      @dragover.prevent="dragOverHandler('dragDiv')"
-      @dragleave.prevent="dragLeaveHandler('dragDiv')"
+      @dragover.prevent="setIsDragOver(true)"
+      @dragleave.prevent="setIsDragOver(false)"
     )
       p.text-xl Drag and Drop Files Here
     // displaying files to user
@@ -34,7 +34,7 @@
       this.allFiles = this.allFiles.filter((f: File) => f !== file);
     }
 
-    dropHandler(event: any, refName: string) {
+    dropHandler(event: any) {
       const droppedFiles = event.dataTransfer.files;
       droppedFiles.forEach((f: any) => {
         this.allFiles.push(f);
@@ -42,13 +42,9 @@
       this.isDragover = false;
     }
 
-    // dragOverHandler() {
-        // ...
-    // }
-
-    // dragLeaveHandler() {
-        // ...
-    // }
+    setIsDragOver(isDragover: boolean) {
+      this.isDragover = isDragover;
+    }
   }
 </script>
 
@@ -79,9 +75,8 @@
     @apply items-center;
   }
   .filedrop-box-dragover {
-    @apply border-gray-800;
     @apply bg-gray-400;
-    @apply p-5;
+    @apply border-gray-700;
   }
   .file-box {
     @apply w-10/12;
