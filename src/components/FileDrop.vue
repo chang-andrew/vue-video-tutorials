@@ -1,8 +1,7 @@
 <template lang='pug'>
   div.demo-box.w-64.h-64(ref="dragDiv"
     @drop.prevent="dropHandler('dragDiv')"
-    @dragover.prevent
-    @dragenter.prevent="dragEnterHandler('dragDiv')"
+    @dragover.prevent="dragOverHandler('dragDiv')"
     @dragleave.prevent="dragLeaveHandler('dragDiv')")
 </template>
 
@@ -19,7 +18,7 @@
       }, 1500);
     }
 
-    dragEnterHandler(refName: string) {
+    dragOverHandler(refName: string) {
       (this.$refs[refName] as HTMLElement).style.backgroundColor = 'green';
     }
 
