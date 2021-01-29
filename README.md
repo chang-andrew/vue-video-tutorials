@@ -23,3 +23,7 @@ https://youtu.be/LTRvj9LUdgs
 
 *Part 1*: https://youtu.be/zx4XoZyZRcI
 
+### Deploying Vue App to GitHub Pages ###
+
+https://youtu.be/H4LlrTW8i_g
+
